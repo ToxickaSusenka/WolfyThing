@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolfy Thing - Výběr</title>
+    <link rel="stylesheet" href="en-style.css">
+</head>
+
+<body>
+      <div id="vanta-overlay"></div>
+
+    <header class="header">
+        <div class="left-section">
+            <span class="header-text">Follow us:</span>
+            <div class="ikona">
+                <a href="https://www.facebook.com/profile.php?id=61580079007495" target="_blank"
+                    rel="noopener noreferrer"><img src="images/ikony/Ikona FB.svg" alt="ikona facebook"></a>
+                <a href="https://www.instagram.com/wolfy_thing2/" target="_blank" rel="noopener noreferrer"><img
+                        src="images/ikony/Ikona Ig.svg" alt="ikona instagram"></a>
+            </div>
+        </div>
+
+        <div class="logo">
+            <img src="images/Wolfy Thing-logo.svg" alt="Wolfy Thing logo">
+        </div>
+
+        <div class="right-section">
+            <div class="lang-switcher">
+                <img src="images/vlajky/gb.svg" alt="Němčina" class="current-flag">
+
+                <ul class="lang-menu">
+                    <li><a href="index.html"><img src="images/vlajky/cz.svg" alt="Čeština"> Čeština</a></li>
+                    <li><a href="lang=en.html"><img src="images/vlajky/gb.svg" alt="English"> English</a></li>
+                    <li><a href="lang=de.html"><img src="images/vlajky/de.svg" alt="Deutsch"> Deutsch</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <!--Milý mentore, pokud si otevřeš kód a budeš se ptát proč rel="noopener noreferrer"
+         někde jsem se dočela že je to zabezpeční před případou manipulací přes window.opener. 
+         U socek je to sice asi blbost, ale kdybych tam měla proklik na nějaký jiný web, 
+         je lepší si udělat z některých věcí zvyk, než na to  v budoucnu doplatit. 
+         Jo a tu poznámku tu dávám spíš pro sebe, ale když už tak už. -->
+    </header>
+    <main>
+
+
+    </main>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.fog.min.js"></script>
+
+  <script>
+    VANTA.FOG({
+       el: "#vanta-overlay",
+  highlightColor: 0xffffff,   // světlejší části mlhy
+  midtoneColor: 0xffffff,      // střední tóny
+  lowlightColor: 0xffffff,     // tmavé části
+  baseColor: 0x000000,         // základní barva se dá nastavit na 0x000000, ale mlha bude poloprůhledná
+  backgroundAlpha: 0,          // DŮLEŽITÉ! 0 = průhledné pozadí
+  blurFactor: 0.6,
+  speed: 1.0,
+  zoom: 1.0
+    });
+  </script>
+
+
+    <script>
+        const langSwitcher = document.querySelector('.lang-switcher');
+        const langMenu = document.querySelector('.lang-menu');
+
+        langSwitcher.addEventListener('mouseenter', () => {
+            langMenu.style.display = 'block';
+           
+        });
+
+        langSwitcher.addEventListener('mouseleave', () => {
+            langMenu.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

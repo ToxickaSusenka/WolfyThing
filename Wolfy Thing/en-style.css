@@ -1,0 +1,252 @@
+:root {
+    --cl1: #000106;
+    --cl2: #16222d;
+    --cl3: #0e2b3e;
+    --cl4: #637989;
+    --cl5: #d1e0e7;
+    --cl6: #fdc966;
+}
+
+
+@font-face {
+    font-family: "Poppins";
+    /*fonty jsou ve složce musím vybrat*/
+    src: url();
+    src: url();
+    src: url();
+}
+#vanta-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;           /* pod hlavičkou a obsahem */
+    pointer-events: none; /* neblokuje klikání */
+    opacity: 0.4;         /* tím uděláme mlhu průhlednou */
+}
+.header, main {
+    position: relative;
+    z-index: 10;       /* nad mlhou */
+}
+
+
+body {
+    margin: 0;
+    background-image: url(images/pozadi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-color: #000106;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: 100px;
+    opacity: 90%;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+
+.header-text {
+    color: var(--cl5);
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+
+.ikona {
+    display: flex;
+    align-items: center;
+}
+
+.ikona img {
+    height: 50px;
+    width: auto;
+    display: flex;
+    cursor: pointer;
+    padding: 0;
+}
+
+.ikona img:hover {
+    transform: scale(1.1);
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.logo img {
+    height: 200px;
+    width: auto;
+}
+
+.lang-switcher{
+        position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.current-flag{
+    width: 30px;
+    height: auto; 
+}
+
+.lang-switcher:hover .lang-menu {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(5px);
+}
+
+
+.lang-menu {
+   
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    background: rgba(14, 43, 62, 0.95);
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    border-radius: 10px;
+    min-width: 160px;
+    z-index: 100;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lang-menu li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    color: var(--cl5);
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.lang-menu li img {
+    width: 30px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+.lang-menu li:hover {
+    background: rgba(255, 255, 255, 0.15);
+    
+}
+
+
+.lang-switcher:hover .lang-menu {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(5px);
+}
+.lang-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   
+    color: var(--cl5);
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+/* ---------- RESPONSIVITA ---------- */
+
+/* Tablety (≤768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        min-height: auto;
+    }
+
+    .left-section, .right-section {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 5px 0;
+    }
+
+    .logo {
+        position: relative;
+        left: auto;
+        transform: none;
+        margin: 10px 0;
+    }
+
+    .logo img {
+        height: 150px;
+    }
+
+    .ikona img {
+        height: 40px;
+    }
+
+    .lang-switcher {
+        margin: 10px;
+    }
+
+    .lang-menu {
+        min-width: 140px;
+        font-size: 0.85rem;
+    }
+
+    .header-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobil (≤480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 8px 10px;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .ikona img {
+        height: 30px;
+    }
+
+    .header-text {
+        font-size: 0.8rem;
+    }
+
+    .lang-menu {
+        min-width: 120px;
+        font-size: 0.8rem;
+    }
+
+    .lang-switcher {
+        margin: 5px;
+    }
+}
+
